@@ -3,11 +3,11 @@ import mysql.connector
 import pandas as pd
 
 Connection = mysql.connector.connect(
-    host=st.secrets["connections.mysql"]["host"],
-    database=st.secrets["connections.mysql"]["database"],
-    user=st.secrets["connections.mysql"]["user"],
-    password=st.secrets["connections.mysql"]["password"],
-    port=st.secrets["connections.mysql"]["port"])
+    host=st.secrets["host"],
+    database=st.secrets["database"],
+    user=st.secrets["user"],
+    password=st.secrets["password"],
+    port=st.secrets["port"])
 
 cursor = Connection.cursor()
 
@@ -50,3 +50,4 @@ TEMP, col, TEMP = st.columns([1,4,1])
 if col.button(label='Generate fake IDs',width='stretch'):
     df = pd.read_sql(f"CALL Final({N},{Seed},'{Locale}','{Gender}')", con=Connection)
     st.write(df)
+
