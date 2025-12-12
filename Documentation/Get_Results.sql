@@ -13,7 +13,6 @@ DELIMITER \\ CREATE PROCEDURE Get_Result (
   gender_arg char(1)
 ) BEGIN 
 SELECT 
-  TEMP_Address.ID, 
   Full_Name, 
   Address, 
   Location, 
@@ -26,4 +25,5 @@ FROM
   TEMP_Address 
   INNER JOIN TEMP_Name_and_Email ON TEMP_Address.ID = TEMP_Name_and_Email.ID 
   INNER JOIN TEMP_Phone_and_Phys ON TEMP_Address.ID = TEMP_Phone_and_Phys.ID;
+
 END \\ DELIMITER;
