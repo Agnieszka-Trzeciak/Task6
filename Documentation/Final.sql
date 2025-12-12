@@ -26,6 +26,18 @@ CALL Get_Middle_Name(Seed_arg, locale_arg, gender_arg);
 CALL Get_Last_Name(Seed_arg, locale_arg, gender_arg);
 Call Combine_Names(Seed_arg, locale_arg, gender_arg);
 DROP 
+	TABLE IF EXISTS TEMP_First_Names;
+DROP 
+	TABLE IF EXISTS TEMP_Last_Names;
+DROP 
+	TABLE IF EXISTS TEMP_Middle_Names;
+DROP 
+	TABLE IF EXISTS TEMP_Phone_and_Phys;
+DROP 
+	TABLE IF EXISTS TEMP_Name_and_Email;
+DROP 
+	TABLE IF EXISTS TEMP_Address;
+DROP 
   TABLE IF EXISTS TEMP_First_Names;
 DROP 
   TABLE IF EXISTS TEMP_Last_Names;
@@ -43,3 +55,4 @@ DROP
 DROP 
   TABLE IF EXISTS Dummy_Limited;
 END \\ DELIMITER;
+
