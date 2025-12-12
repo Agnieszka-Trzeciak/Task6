@@ -14,17 +14,6 @@ DELIMITER \\ CREATE PROCEDURE Final (
 ) BEGIN 
 DROP 
   TABLE IF EXISTS Dummy_Limited;
-CREATE TABLE Dummy_Limited (col int) AS 
-SELECT 
-  * 
-FROM 
-  dummy 
-LIMIT 
-  N;
-CALL Get_First_Name(Seed_arg, locale_arg, gender_arg);
-CALL Get_Middle_Name(Seed_arg, locale_arg, gender_arg);
-CALL Get_Last_Name(Seed_arg, locale_arg, gender_arg);
-Call Combine_Names(Seed_arg, locale_arg, gender_arg);
 DROP 
 	TABLE IF EXISTS TEMP_First_Names;
 DROP 
@@ -38,6 +27,17 @@ DROP
 DROP 
 	TABLE IF EXISTS TEMP_Address;
 DROP 
+CREATE TABLE Dummy_Limited (col int) AS 
+SELECT 
+  * 
+FROM 
+  dummy 
+LIMIT 
+  N;
+CALL Get_First_Name(Seed_arg, locale_arg, gender_arg);
+CALL Get_Middle_Name(Seed_arg, locale_arg, gender_arg);
+CALL Get_Last_Name(Seed_arg, locale_arg, gender_arg);
+Call Combine_Names(Seed_arg, locale_arg, gender_arg);
   TABLE IF EXISTS TEMP_First_Names;
 DROP 
   TABLE IF EXISTS TEMP_Last_Names;
@@ -55,4 +55,5 @@ DROP
 DROP 
   TABLE IF EXISTS Dummy_Limited;
 END \\ DELIMITER;
+
 
