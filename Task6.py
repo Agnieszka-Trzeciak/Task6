@@ -49,10 +49,7 @@ st.divider()
 TEMP, col, TEMP = st.columns([1,4,1])
 if col.button(label='Generate fake IDs',width='stretch'):
     df = pd.read_sql(f"CALL Final({N},{Seed},'{Locale}','{Gender}')", con=Connection)
-    n = 0
-    while n<N:
-        st.write(df[n:n+10000])
-        n+=10000
+    st.write(df)
 
 
 
