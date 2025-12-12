@@ -27,8 +27,8 @@ try:
     N = int(N)
 except:
     N = 1
-if N>100000:
-    N = 10000
+if N>500000:
+    N = 500000
 
 try:
     Seed = int(Seed)
@@ -53,5 +53,6 @@ if col.button(label='Generate fake IDs',width='stretch'):
     while n<N:
         st.write(df[n:n+10000])
         n+=10000
+
 
 
